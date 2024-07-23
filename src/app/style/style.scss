@@ -1,0 +1,81 @@
+@mixin flexv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+@mixin flexh{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+}
+$colors:('primary':#8739F9, 'accent': #37B9F1, 'greyy':#F2F5F5, 'text':#565360, 'label':#908E9B);
+
+
+
+.main-page{
+    @include flexv;
+    text-align: center;
+}
+.heading{
+    text-align: center;
+    color: map-get($map: $colors, $key: primary);
+}
+.input{
+    margin-right : 10px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid map-get($map: $colors, $key: label);
+    padding: 5px;
+
+
+}
+.button{
+    height: 30px;
+    font-size: 17px;
+    background-image: linear-gradient(to right , map-get($map: $colors, $key: primary), map-get($map: $colors, $key: accent));
+    border: none;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: map-get($map: $colors, $key: greyy);
+    
+
+}
+.task{
+    border:2px solid map-get($map: $colors, $key: accent);
+    border-radius:10px; 
+    padding: 10px 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    @include flexh();
+
+    span{
+        margin: 0;
+        font-size: 18px;
+        padding-bottom: 6px;
+    }
+    .buttons{
+        button{
+            border: none;
+            background-color: #fff;
+            height: 20px;
+            padding: 0;
+        }
+        
+    }
+    
+}
+
+.update{
+    border:2px solid map-get($map: $colors, $key: accent);
+    border-radius:10px; 
+    text-align: center;
+    padding-bottom: 50px;
+
+}
+.blue-head{
+    color: map-get($map: $colors, $key: primary);
+}
